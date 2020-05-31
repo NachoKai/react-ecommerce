@@ -4,14 +4,14 @@ import 'firebase/auth';
 require('dotenv').config();
 
 const config = {
-  apiKey: process.env.REACT_APP_API_KEY,
-  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
-  databaseURL: process.env.REACT_APP_DATABASE_URL,
-  projectId: process.env.REACT_APP_PROJECT_ID,
-  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
-  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_APP_ID,
-  measurementId: process.env.REACT_APP_MEASUREMENT_ID,
+  apiKey: 'AIzaSyBZFOMoR012oiwXVCtZZsDfpILcw4sH8yw',
+  authDomain: 'ecommerce-db-9f210.firebaseapp.com',
+  databaseURL: 'https://ecommerce-db-9f210.firebaseio.com',
+  projectId: 'ecommerce-db-9f210',
+  storageBucket: 'ecommerce-db-9f210.appspot.com',
+  messagingSenderId: '20340116199',
+  appId: '1:20340116199:web:031d1e1cb3b9683521b042',
+  measurementId: 'G-BJCP52TG3W',
 };
 
 firebase.initializeApp(config);
