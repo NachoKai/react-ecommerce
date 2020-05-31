@@ -20,13 +20,30 @@ const CollectionItem = ({ id, name, imageUrl, price }) => {
     background: ${({ imageUrl }) => `url(${imageUrl}) center`};
   `;
 
+  const CollectionFooter = styled.div`
+    width: 100%;
+    height: 5%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+
+    .name {
+      width: 90%;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      width: 10%;
+    }
+  `;
+
   return (
     <CollectionItemContainer className='collection-item'>
       <CollectionItemImage imageUrl={imageUrl} />
-      <div className='collection-footer'>
+      <CollectionFooter>
         <span className='name'>{name}</span>
         <span className='price'>{price}</span>
-      </div>
+      </CollectionFooter>
     </CollectionItemContainer>
   );
 };
