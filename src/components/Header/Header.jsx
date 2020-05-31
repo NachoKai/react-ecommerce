@@ -1,8 +1,8 @@
 import React from 'react';
-import './Header.scss';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { ReactComponent as Logo } from '../../assets/knight.svg';
+import { auth } from '../../firebase/utils';
 
 const HeaderContainer = styled.div`
   height: 70px;
@@ -15,6 +15,11 @@ const HeaderContainer = styled.div`
     height: 100%;
     width: 70px;
     padding: 25px;
+  }
+
+  .logo {
+    max-width: 45px;
+    height: auto;
   }
 `;
 
@@ -30,7 +35,7 @@ const Options = styled.div`
   }
 `;
 
-const Header = () => {
+const Header = ({ currentUser }) => {
   return (
     <HeaderContainer>
       <Link className='logo-container' to='/'>
@@ -43,6 +48,15 @@ const Header = () => {
         <Link className='option' to='/contact'>
           CONTACT
         </Link>
+        {currentUser ? (
+          <div className='option' onClick={() => auth.signOut()}>
+            SIGN OUT
+          </div>
+        ) : (
+          <Link className='option' to='/signin'>
+            SIGN IN
+          </Link>
+        )}
       </Options>
     </HeaderContainer>
   );

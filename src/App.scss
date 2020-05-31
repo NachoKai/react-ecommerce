@@ -1,14 +1,22 @@
+* {
+  box-sizing: border-box;
+}
+
 html {
   background-color: #230444;
   color: #eee;
 }
 
 body {
-  padding: 2rem 4rem;
+  padding: 1rem 4rem;
   font-family: 'Chau Philomene One', sans-serif;
 }
 
 a {
   color: #eee;
   text-decoration: none;
+
+  &:hover {
+    cursor: pointer;
+  }
 }

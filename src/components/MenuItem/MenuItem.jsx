@@ -1,5 +1,4 @@
 import React from 'react';
-import './MenuItem.scss';
 import styled from 'styled-components';
 import { withRouter } from 'react-router-dom';
 
@@ -28,6 +27,18 @@ const MenuItem = ({
       cursor: pointer;
       opacity: 0.9;
     }
+
+    &.large {
+      height: 380px;
+    }
+
+    &:first-child {
+      margin-right: 7.5px;
+    }
+
+    &:last-child {
+      margin-left: 7.5px;
+    }
   `;
 
   const BackgroundImage = styled.div`
@@ -42,16 +53,42 @@ const MenuItem = ({
     }
   `;
 
+  const Content = styled.div`
+    height: 90px;
+    padding: 0 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    background-color: #381460;
+    opacity: 0.7;
+    border-radius: 0.5rem;
+    position: absolute;
+
+    .title {
+      font-weight: bold;
+      margin-bottom: 6px;
+      font-size: 22px;
+      color: #eee;
+    }
+
+    .subtitle {
+      font-weight: lighter;
+      font-size: 16px;
+    }
+  `;
+
   return (
     <MenuItemContainer
       className={`${size} menu-item`}
       onClick={() => history.push(`${match.url}${linkUrl}`)}
     >
       <BackgroundImage imageUrl={imageUrl}></BackgroundImage>
-      <div className='content'>
+      <Content>
         <h1 className='title'>{title.toUpperCase()}</h1>
         <span className='subtitle'>{subtitle}</span>
-      </div>
+      </Content>
     </MenuItemContainer>
   );
 };
