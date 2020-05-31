@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import FormInput from '../FormInput/FormInput';
 import CustomButton from '../CustomButton/CustomButton';
-import { signInWithGoogle } from '../../firebase/utils';
+import { auth, signInWithGoogle } from '../../firebase/utils';
 
 const Flex = styled.div`
   display: flex;
@@ -11,7 +11,6 @@ const Flex = styled.div`
 const SignInContainer = styled.div`
   display: flex;
   flex-direction: column;
-  max-width: 300px;
 `;
 
 const Title = styled.h2`
@@ -27,10 +26,14 @@ const SignIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleSubmit = e => {
-    e.preventDefault();
-    setEmail('');
-    setPassword('');
+  const handleSubmit = async e => {
+    try {
+      await auth.signInWithEmailAndPassword(email, password);
+      setEmail('');
+      setPassword('');
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const handleChangeEmail = e => {
@@ -46,9 +49,7 @@ const SignIn = () => {
   return (
     <SignInContainer>
       <Title>I already have an account</Title>
-      <Subtitle>
-        <span>Sign in with your email and password</span>
-      </Subtitle>
+      <Subtitle>Sign in with your email and password</Subtitle>
 
       <form onSubmit={handleSubmit}>
         <label htmlFor='email'>Email</label>
@@ -60,7 +61,7 @@ const SignIn = () => {
           placeholder='Insert email...'
           required
         />
-        <label htmlFor='password'>Password</label>
+
         <FormInput
           onChange={handleChangePassword}
           name='password'
@@ -70,7 +71,7 @@ const SignIn = () => {
           required
         />
         <Flex>
-          <CustomButton type='submit'>Sign In</CustomButton>
+          <CustomButton type='button'>Sign In</CustomButton>
           <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
             Sign In with Google
           </CustomButton>

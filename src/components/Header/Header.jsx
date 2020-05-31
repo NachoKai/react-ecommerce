@@ -32,6 +32,10 @@ const Options = styled.div`
 
   .option {
     padding: 10px 15px;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 `;
 

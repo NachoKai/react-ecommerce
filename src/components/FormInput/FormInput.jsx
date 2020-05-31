@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Group = styled.div`
   position: relative;
-  margin: 0 0 30px 0;
+  margin: 10px 0 30px 0;
 
   input {
     border-radius: 0.5rem;
