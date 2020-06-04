@@ -14,7 +14,7 @@ function App() {
     auth.onAuthStateChanged(userAuth => {
       setCurrentUser(userAuth);
     });
-  }, []);
+  }, [currentUser]);
 
   useEffect(() => {
     auth.onAuthStateChanged(async userAuth => {
@@ -26,8 +26,6 @@ function App() {
             id: snapShot.id,
             ...snapShot.data(),
           });
-
-          console.log(userAuth);
         });
       } else {
         setCurrentUser({ userAuth });

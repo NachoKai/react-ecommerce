@@ -4,7 +4,7 @@ import CustomButton from '../CustomButton/CustomButton';
 import styled from 'styled-components';
 import { auth, createUserProfileDocument } from '../../firebase/utils';
 
-const SignUpContainer = styled.div`
+const SignUpContainer = styled.form`
   display: flex;
   flex-direction: column;
   width: 400px;
@@ -70,44 +70,45 @@ const SignUp = () => {
     <SignUpContainer>
       <Title>I do not have an account</Title>
       <Subtitle>Sign up with your email and password</Subtitle>
-      <form onSubmit={handleSubmit}></form>
-      <label htmlFor='displayName'>Name</label>
-      <FormInput
-        type='text'
-        name='displayName'
-        value={displayName}
-        onChange={handleDisplayName}
-        placeholder='Insert Name...'
-        required
-      ></FormInput>
-      <label htmlFor='email'>Email</label>
-      <FormInput
-        type='email'
-        name='email'
-        value={email}
-        onChange={handleEmail}
-        placeholder='Insert Email...'
-        required
-      ></FormInput>
-      <label htmlFor='password'>Password</label>
-      <FormInput
-        type='password'
-        name='password'
-        value={password}
-        onChange={handlePassword}
-        placeholder='Insert Password...'
-        required
-      ></FormInput>
-      <label htmlFor='password'>Confirm Password</label>
-      <FormInput
-        type='password'
-        name='confirmPassword'
-        value={confirmPassword}
-        onChange={handleConfirmPassword}
-        placeholder='Confirm Password...'
-        required
-      ></FormInput>
-      <CustomButton type='submit'> SIGN UP </CustomButton>
+      <form onSubmit={handleSubmit}>
+        <label htmlFor='displayName'>Name</label>
+        <FormInput
+          type='text'
+          name='displayName'
+          value={displayName}
+          onChange={handleDisplayName}
+          placeholder='Insert Name...'
+          required
+        ></FormInput>
+        <label htmlFor='email'>Email</label>
+        <FormInput
+          type='email'
+          name='email'
+          value={email}
+          onChange={handleEmail}
+          placeholder='Insert Email...'
+          required
+        ></FormInput>
+        <label htmlFor='password'>Password</label>
+        <FormInput
+          type='password'
+          name='password'
+          value={password}
+          onChange={handlePassword}
+          placeholder='Insert Password...'
+          required
+        ></FormInput>
+        <label htmlFor='password'>Confirm Password</label>
+        <FormInput
+          type='password'
+          name='confirmPassword'
+          value={confirmPassword}
+          onChange={handleConfirmPassword}
+          placeholder='Confirm Password...'
+          required
+        ></FormInput>
+        <CustomButton type='submit'> SIGN UP </CustomButton>
+      </form>
     </SignUpContainer>
   );
 };

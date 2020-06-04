@@ -71,7 +71,9 @@ const SignIn = () => {
           required
         />
         <Flex>
-          <CustomButton type='button'>Sign In</CustomButton>
+          <CustomButton onClick={handleSubmit} type='button'>
+            Sign In
+          </CustomButton>
           <CustomButton onClick={signInWithGoogle} isGoogleSignIn>
             Sign In with Google
           </CustomButton>
