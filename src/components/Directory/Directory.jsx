@@ -1,6 +1,7 @@
 import React from 'react';
-import MenuItem from '../MenuItem/MenuItem';
 import styled from 'styled-components';
+
+import MenuItem from '../MenuItem/MenuItem';
 
 const Directory = () => {
   const DirectoryContainer = styled.div`
