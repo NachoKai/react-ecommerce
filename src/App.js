@@ -17,13 +17,12 @@ function App() {
     auth.onAuthStateChanged(userAuth => {
       setCurrentUser(userAuth);
     });
-  }, [currentUser]);
+  }, []);
 
   useEffect(() => {
     auth.onAuthStateChanged(async userAuth => {
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
-
         userRef.onSnapshot(snapShot => {
           setCurrentUser({
             id: snapShot.id,
@@ -52,8 +51,8 @@ function App() {
   );
 }
 
-const mapStateToProps = ({ user }) => ({
-  currentUser: user.currentUser,
+const mapStateToProps = ({ user: { currentUser } }) => ({
+  currentUser,
 });
 
 const mapDispatchToProps = dispatch => ({

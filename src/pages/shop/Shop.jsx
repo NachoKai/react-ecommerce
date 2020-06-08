@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import SHOP_DATA from './ShopData';
 import CollectionPreview from '../../components/CollectionPreview/CollectionPreview';
 
