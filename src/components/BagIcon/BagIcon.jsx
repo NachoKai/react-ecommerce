@@ -21,6 +21,7 @@ const IconContainer = styled.div`
 const ItemCount = styled.div`
   display: flex;
   align-items: center;
+  color: #fff;
   justify-content: center;
   position: absolute;
   font-size: 12px;

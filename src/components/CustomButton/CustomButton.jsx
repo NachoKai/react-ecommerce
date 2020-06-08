@@ -14,6 +14,8 @@ const Button = styled.button`
   border: 2px solid #eee;
   border-radius: 0.5rem;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
 
   &:hover {
     background-color: white;
