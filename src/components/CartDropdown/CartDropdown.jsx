@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import { connect } from 'react-redux';
 
 import CustomButton from '../CustomButton/CustomButton';
+import CartItem from '../CartItem/CartItem';
 
 const Dropdown = styled.div`
   background-color: #381460;
@@ -14,11 +16,11 @@ const Dropdown = styled.div`
   position: absolute;
   right: 60px;
   top: 80px;
-  width: 240px;
+  width: 265px;
   z-index: 5;
 
   button {
-    margin-top: auto;
+    margin-top: 15px;
   }
 `;
 
@@ -29,13 +31,21 @@ const CartItems = styled.div`
   overflow: scroll;
 `;
 
-const CartDropdown = () => {
+const CartDropdown = ({ cartItems }) => {
   return (
     <Dropdown>
-      <CartItems />
+      <CartItems>
+        {cartItems.map(cartItem => (
+          <CartItem key={cartItem.id} item={cartItem} />
+        ))}
+      </CartItems>
       <CustomButton>GO TO CHECKOUT</CustomButton>
     </Dropdown>
   );
 };
 
-export default CartDropdown;
+const mapStateToProps = ({ cart: { cartItems } }) => ({
+  cartItems,
+});
+
+export default connect(mapStateToProps)(CartDropdown);
