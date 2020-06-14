@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import { toggleCartHidden } from '../../redux/cart/cart.actions';
 import Bag from '../../assets/bag.png';
+import { selectCartItemsCount } from '../../redux/cart/cart.selectors';
 
 const IconContainer = styled.div`
   display: flex;
@@ -56,8 +57,8 @@ const mapDispatchToProps = dispatch => ({
   toggleCartHidden: () => dispatch(toggleCartHidden()),
 });
 
-const mapStateToProps = ({ cart: { cartItems } }) => ({
-  itemCount: cartItems.reduce((acc, cartItem) => acc + cartItem.quantity, 0),
+const mapStateToProps = state => ({
+  itemCount: selectCartItemsCount(state),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CartIcon);
