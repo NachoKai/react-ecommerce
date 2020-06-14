@@ -24,10 +24,10 @@ const ItemCount = styled.div`
   color: #fff;
   justify-content: center;
   position: absolute;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: bold;
   bottom: 6px;
-  left: 15px;
+  left: 12px;
 `;
 
 const Icon = styled.div`
@@ -41,13 +41,13 @@ const Icon = styled.div`
   }
 `;
 
-const BagIcon = ({ toggleCartHidden }) => {
+const CartIcon = ({ toggleCartHidden, itemCount }) => {
   return (
     <IconContainer onClick={toggleCartHidden}>
       <Icon>
         <img className='icon' alt='bag icon' src={Bag} />
       </Icon>
-      <ItemCount>0</ItemCount>
+      <ItemCount>{itemCount}</ItemCount>
     </IconContainer>
   );
 };
@@ -56,4 +56,8 @@ const mapDispatchToProps = dispatch => ({
   toggleCartHidden: () => dispatch(toggleCartHidden()),
 });
 
-export default connect(null, mapDispatchToProps)(BagIcon);
+const mapStateToProps = ({ cart: { cartItems } }) => ({
+  itemCount: cartItems.reduce((acc, cartItem) => acc + cartItem.quantity, 0),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(CartIcon);

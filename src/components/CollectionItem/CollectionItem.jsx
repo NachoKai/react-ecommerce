@@ -34,7 +34,7 @@ const CollectionItem = ({ item, addItem }) => {
       display: none;
 
       &:hover {
-        opacity: 1;
+        opacity: 0.9;
         background-color: black;
         color: white;
         border: 2px solid white;

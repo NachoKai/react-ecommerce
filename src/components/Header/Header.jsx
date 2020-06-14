@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 
 import { ReactComponent as Logo } from '../../assets/knight.svg';
 import { auth } from '../../firebase/utils';
-import BagIcon from '../BagIcon/BagIcon';
+import CartIcon from '../CartIcon/CartIcon';
 import CartDropdown from '../CartDropdown/CartDropdown';
 
 const HeaderContainer = styled.div`
@@ -65,7 +65,7 @@ const Header = ({ currentUser, hidden }) => {
             SIGN IN
           </Link>
         )}
-        <BagIcon />
+        <CartIcon />
       </Options>
       {hidden ? null : <CartDropdown />}
     </HeaderContainer>
