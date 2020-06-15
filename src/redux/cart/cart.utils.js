@@ -23,26 +23,21 @@ export const addItemToCart = (cartItems, cartItemToAdd) => {
   ];
 };
 
-export const removeItemFromCart = (cartItems, cartItemId) => {
-  const filteredItems = cartItems.filter(
-    cartItem => cartItem.id !== cartItemId
-  );
-
-  return [...filteredItems];
-};
-
-export const reduceDeleteItemFromCart = (cartItems, cartItemToReduce) => {
+export const removeItemFromCart = (cartItems, cartItemToRemove) => {
   const existingCartItem = cartItems.find(
-    cartItem => cartItem.id === cartItemToReduce.id
+    cartItem => cartItem.id === cartItemToRemove.id
   );
 
   if (existingCartItem.quantity === 1) {
-    return cartItems.filter(cartItem => cartItem.id !== cartItemToReduce.id);
+    return cartItems.filter(cartItem => cartItem.id !== cartItemToRemove.id);
   }
 
   return cartItems.map(cartItem =>
-    cartItem.id === cartItemToReduce.id
-      ? { ...cartItem, quantity: cartItem.quantity - 1 }
+    cartItem.id === cartItemToRemove.id
+      ? {
+          ...cartItem,
+          quantity: cartItem.quantity - 1,
+        }
       : cartItem
   );
 };

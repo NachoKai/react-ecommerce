@@ -35,8 +35,8 @@ const MenuItemContainer = styled.div`
 const BackgroundImage = styled.div`
   width: 100%;
   height: 100%;
-  background-size: contain;
   background: ${({ imageUrl }) => `url(${imageUrl}) center`};
+  background-size: cover;
 
   &:hover {
     transform: scale(1.1);
