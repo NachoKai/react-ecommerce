@@ -38,6 +38,7 @@ const Options = styled.div`
   justify-content: flex-end;
 
   .option {
+    min-width: 60px;
     padding: 10px 15px;
 
     &:hover {
