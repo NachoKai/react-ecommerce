@@ -21,7 +21,7 @@ const Group = styled.div`
   }
 `;
 
-const FormInputContainer = styled.input`
+const Container = styled.input`
   background: none;
   background-color: white;
   color: #222;
@@ -42,7 +42,7 @@ const FormInputContainer = styled.input`
 const FormInput = ({ handleChange, label, ...otherProps }) => {
   return (
     <Group>
-      <FormInputContainer onChange={handleChange} {...otherProps} />
+      <Container onChange={handleChange} {...otherProps} />
       {label && (
         <label
           className={`${

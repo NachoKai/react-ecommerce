@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { withRouter } from 'react-router-dom';
 
-const MenuItemContainer = styled.div`
+const Container = styled.div`
   min-width: 30%;
   height: 240px;
   flex: 1 1 auto;
@@ -80,7 +80,7 @@ const MenuItem = ({
   match,
 }) => {
   return (
-    <MenuItemContainer
+    <Container
       className={`${size} menu-item`}
       onClick={() => history.push(`${match.url}${linkUrl}`)}
     >
@@ -89,7 +89,7 @@ const MenuItem = ({
         <h1 className='title'>{title.toUpperCase()}</h1>
         <span className='subtitle'>{subtitle}</span>
       </Content>
-    </MenuItemContainer>
+    </Container>
   );
 };
 

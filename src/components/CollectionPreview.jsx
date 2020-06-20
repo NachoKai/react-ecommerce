@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import CollectionItem from './CollectionItem';
 
-const CollectionPreviewContainer = styled.div`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   margin-bottom: 30px;
@@ -21,7 +21,7 @@ const CollectionPreviewContainer = styled.div`
 
 const CollectionPreview = ({ title, items }) => {
   return (
-    <CollectionPreviewContainer>
+    <Container>
       <h1 className='title'>{title.toUpperCase()}</h1>
       <div className='preview'>
         {items
@@ -30,7 +30,7 @@ const CollectionPreview = ({ title, items }) => {
             <CollectionItem key={item.id} item={item} />
           ))}
       </div>
-    </CollectionPreviewContainer>
+    </Container>
   );
 };
 

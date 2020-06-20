@@ -11,7 +11,7 @@ import CartDropdown from './CartDropdown';
 import { selectCartHidden } from '../redux/Cart';
 import { selectCurrentUser } from '../redux/User';
 
-const HeaderContainer = styled.div`
+const Container = styled.div`
   height: 70px;
   width: 100%;
   display: flex;
@@ -49,7 +49,7 @@ const Options = styled.div`
 
 const Header = ({ currentUser, hidden }) => {
   return (
-    <HeaderContainer>
+    <Container>
       <Link className='logo-container' to='/'>
         <Logo className='logo' />
       </Link>
@@ -72,7 +72,7 @@ const Header = ({ currentUser, hidden }) => {
         <CartIcon />
       </Options>
       {hidden ? null : <CartDropdown />}
-    </HeaderContainer>
+    </Container>
   );
 };
 

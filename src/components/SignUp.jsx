@@ -5,7 +5,7 @@ import FormInput from './FormInput';
 import CustomButton from './CustomButton';
 import { auth, createUserProfileDocument } from '../firebase/utils';
 
-const SignUpContainer = styled.form`
+const Container = styled.form`
   display: flex;
   flex-direction: column;
   width: 400px;
@@ -68,7 +68,7 @@ const SignUp = () => {
   };
 
   return (
-    <SignUpContainer>
+    <Container>
       <Title>I do not have an account</Title>
       <Subtitle>Sign up with your email and password</Subtitle>
       <form onSubmit={handleSubmit}>
@@ -110,7 +110,7 @@ const SignUp = () => {
         ></FormInput>
         <CustomButton type='submit'> SIGN UP </CustomButton>
       </form>
-    </SignUpContainer>
+    </Container>
   );
 };
 

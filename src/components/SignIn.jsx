@@ -9,7 +9,7 @@ const Flex = styled.div`
   display: flex;
 `;
 
-const SignInContainer = styled.div`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
 `;
@@ -48,7 +48,7 @@ const SignIn = () => {
   };
 
   return (
-    <SignInContainer>
+    <Container>
       <Title>I already have an account</Title>
       <Subtitle>Sign in with your email and password</Subtitle>
 
@@ -80,7 +80,7 @@ const SignIn = () => {
           </CustomButton>
         </Flex>
       </form>
-    </SignInContainer>
+    </Container>
   );
 };
 

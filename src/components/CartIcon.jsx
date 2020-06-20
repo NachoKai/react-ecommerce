@@ -7,7 +7,7 @@ import { toggleCartHidden } from '../redux/Cart';
 import Bag from '../assets/bag.png';
 import { selectCartItemsCount } from '../redux/Cart';
 
-const IconContainer = styled.div`
+const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,12 +45,12 @@ const Icon = styled.div`
 
 const CartIcon = ({ toggleCartHidden, itemCount }) => {
   return (
-    <IconContainer onClick={toggleCartHidden}>
+    <Container onClick={toggleCartHidden}>
       <Icon>
         <img className='icon' alt='bag icon' src={Bag} />
       </Icon>
       <ItemCount>{itemCount}</ItemCount>
-    </IconContainer>
+    </Container>
   );
 };
 

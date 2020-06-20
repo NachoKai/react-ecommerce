@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const ItemContainer = styled.div`
+const Container = styled.div`
   width: 100%;
   display: flex;
   height: 65px;
@@ -12,7 +12,7 @@ const ItemContainer = styled.div`
   }
 `;
 
-const ItemDetails = styled.div`
+const Details = styled.div`
   width: 70%;
   display: flex;
   flex-direction: column;
@@ -32,15 +32,15 @@ const Price = styled.span`
 
 const CartItem = ({ item: { imageUrl, price, name, quantity } }) => {
   return (
-    <ItemContainer>
+    <Container>
       <img src={imageUrl} alt='item' />
-      <ItemDetails>
+      <Details>
         <Name>{name}</Name>
         <Price>
           {quantity} x ${price}
         </Price>
-      </ItemDetails>
-    </ItemContainer>
+      </Details>
+    </Container>
   );
 };
 
