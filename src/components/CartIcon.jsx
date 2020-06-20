@@ -29,7 +29,7 @@ const ItemCount = styled.div`
   font-size: 16px;
   font-weight: bold;
   bottom: 6px;
-  left: 13px;
+  left: 14px;
 `;
 
 const Icon = styled.div`

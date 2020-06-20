@@ -23,7 +23,7 @@ const Container = styled.div`
   .inverted {
     background-color: white;
     color: black;
-    width: 80%;
+    width: 70%;
     height: 50px;
     opacity: 0.7;
     line-height: 30px;
@@ -44,7 +44,7 @@ const Container = styled.div`
 
 const Image = styled.div`
   width: 100%;
-  height: 95%;
+  height: 100%;
   background-size: cover;
   background-position: center;
   margin-bottom: 5px;

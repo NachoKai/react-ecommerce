@@ -40,7 +40,7 @@ const BackgroundImage = styled.div`
 
   &:hover {
     transform: scale(1.1);
-    transition: transform 5s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    transition: transform 15s cubic-bezier(0.25, 0.45, 0.45, 0.95);
   }
 `;
 
@@ -56,6 +56,11 @@ const Content = styled.div`
   opacity: 0.7;
   border-radius: 0.5rem;
   position: absolute;
+
+  &:hover {
+    opacity: 0.9;
+    transition: opacity 0.5s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+  }
 
   .title {
     font-weight: bold;
