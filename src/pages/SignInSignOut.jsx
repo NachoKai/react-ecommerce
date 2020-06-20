@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import SignIn from '../components/SignIn';
 import SignUp from '../components/SignUp';
 
-const SignInSignOutContainer = styled.div`
+const Container = styled.div`
   display: flex;
   justify-content: space-evenly;
   margin: 2rem auto;
@@ -12,10 +12,10 @@ const SignInSignOutContainer = styled.div`
 
 const SignInSignOut = () => {
   return (
-    <SignInSignOutContainer>
+    <Container>
       <SignIn />
       <SignUp />
-    </SignInSignOutContainer>
+    </Container>
   );
 };
 
