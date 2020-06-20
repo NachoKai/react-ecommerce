@@ -1,3 +1,20 @@
+// SELECTORS ================================
+// ==========================================
+// ==========================================
+
+import { createSelector } from 'reselect';
+
+const selectShop = state => state.shop;
+
+export const selectCollections = createSelector(
+  [selectShop],
+  shop => shop.collections
+);
+
+// REDUCER== ================================
+// ==========================================
+// ==========================================
+
 const SHOP_DATA = [
   {
     id: 1,
@@ -246,4 +263,15 @@ const SHOP_DATA = [
   },
 ];
 
-export default SHOP_DATA;
+const INITIAL_STATE = {
+  collections: SHOP_DATA,
+};
+
+const shopReducer = (state = INITIAL_STATE, action) => {
+  switch (action.type) {
+    default:
+      return state;
+  }
+};
+
+export default shopReducer;

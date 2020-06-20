@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 
-import CustomButton from '../CustomButton/CustomButton';
-import { addItem } from '../../redux/cart/cart.actions';
+import CustomButton from './CustomButton';
+import { addItem } from '../redux/Cart';
 
 const CollectionItem = ({ item, addItem }) => {
   const CollectionItemContainer = styled.div`

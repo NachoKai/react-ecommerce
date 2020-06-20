@@ -4,14 +4,14 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
 import './App.scss';
-import Homepage from './pages/homepage/Homepage';
-import Shop from './pages/shop/Shop';
-import Header from './components/Header/Header';
-import SignInSignOut from './pages/sign-in-sign-out/SignInSignOut';
-import Checkout from './pages/checkout/Checkout';
+import Homepage from './pages/Homepage';
+import Shop from './pages/Shop';
+import Header from './components/Header';
+import SignInSignOut from './pages/SignInSignOut';
+import Checkout from './pages/Checkout';
 import { auth, createUserProfileDocument } from './firebase/utils';
-import { setCurrentUser } from './redux/user/user.actions';
-import { selectCurrentUser } from './redux/user/user.selectors';
+import { setCurrentUser } from './redux/User';
+import { selectCurrentUser } from './redux/User';
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);

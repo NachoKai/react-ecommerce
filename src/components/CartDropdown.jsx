@@ -4,10 +4,10 @@ import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 import { withRouter } from 'react-router-dom';
 
-import CustomButton from '../CustomButton/CustomButton';
-import CartItem from '../CartItem/CartItem';
-import { selectCartItems } from '../../redux/cart/cart.selectors';
-import { toggleCartHidden } from '../../redux/cart/cart.actions';
+import CustomButton from './CustomButton';
+import CartItem from './CartItem';
+import { selectCartItems } from '../redux/Cart';
+import { toggleCartHidden } from '../redux/Cart';
 
 const Dropdown = styled.div`
   background-color: #381460;

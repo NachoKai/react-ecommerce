@@ -1,17 +1,22 @@
-import React from 'react';
-import styled from 'styled-components';
+// SELECTORS ================================
+// ==========================================
+// ==========================================
 
-import MenuItem from '../MenuItem/MenuItem';
+import { createSelector } from 'reselect';
 
-const Directory = () => {
-  const DirectoryContainer = styled.div`
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  `;
+const selectDirectory = state => state.directory;
 
-  const sections = [
+export const selectDirectorySection = createSelector(
+  [selectDirectory],
+  directory => directory.sections
+);
+
+// REDUCER ==================================
+// ==========================================
+// ==========================================
+
+const INITIAL_STATE = {
+  sections: [
     {
       title: 'Swords',
       imageUrl:
@@ -49,15 +54,14 @@ const Directory = () => {
       id: 5,
       linkUrl: 'shop/shields',
     },
-  ];
-
-  return (
-    <DirectoryContainer>
-      {sections.map(({ id, ...otherSectionProps }) => (
-        <MenuItem key={id} {...otherSectionProps} />
-      ))}
-    </DirectoryContainer>
-  );
+  ],
 };
 
-export default Directory;
+const directoryReducer = (state = INITIAL_STATE, action) => {
+  switch (action.type) {
+    default:
+      return state;
+  }
+};
+
+export default directoryReducer;

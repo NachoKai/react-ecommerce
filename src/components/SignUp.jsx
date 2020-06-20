@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import FormInput from '../FormInput/FormInput';
-import CustomButton from '../CustomButton/CustomButton';
-import { auth, createUserProfileDocument } from '../../firebase/utils';
+import FormInput from './FormInput';
+import CustomButton from './CustomButton';
+import { auth, createUserProfileDocument } from '../firebase/utils';
 
 const SignUpContainer = styled.form`
   display: flex;

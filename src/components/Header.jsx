@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import { ReactComponent as Logo } from '../../assets/knight.svg';
-import { auth } from '../../firebase/utils';
-import CartIcon from '../CartIcon/CartIcon';
-import CartDropdown from '../CartDropdown/CartDropdown';
-import { selectCartHidden } from '../../redux/cart/cart.selectors';
-import { selectCurrentUser } from '../../redux/user/user.selectors';
+import { ReactComponent as Logo } from '../assets/knight.svg';
+import { auth } from '../firebase/utils';
+import CartIcon from './CartIcon';
+import CartDropdown from './CartDropdown';
+import { selectCartHidden } from '../redux/Cart';
+import { selectCurrentUser } from '../redux/User';
 
 const HeaderContainer = styled.div`
   height: 70px;

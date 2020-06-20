@@ -3,11 +3,8 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import {
-  selectCartItems,
-  selectCartTotal,
-} from '../../redux/cart/cart.selectors';
-import CheckoutItem from '../../components/CheckoutItem/CheckoutItem';
+import { selectCartItems, selectCartTotal } from '../redux/Cart';
+import CheckoutItem from '../components/CheckoutItem';
 
 const Container = styled.div`
   width: 55%;

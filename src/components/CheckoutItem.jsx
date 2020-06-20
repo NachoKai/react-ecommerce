@@ -2,11 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 
-import {
-  clearItemFromCart,
-  addItem,
-  removeItem,
-} from '../../redux/cart/cart.actions';
+import { clearItemFromCart, addItem, removeItem } from '../redux/Cart';
 
 const Container = styled.div`
   width: 100%;

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import CollectionItem from '../CollectionItem/CollectionItem';
+import CollectionItem from './CollectionItem';
 
 const CollectionPreviewContainer = styled.div`
   display: flex;

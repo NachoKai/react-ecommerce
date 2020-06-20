@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import { toggleCartHidden } from '../../redux/cart/cart.actions';
-import Bag from '../../assets/bag.png';
-import { selectCartItemsCount } from '../../redux/cart/cart.selectors';
+import { toggleCartHidden } from '../redux/Cart';
+import Bag from '../assets/bag.png';
+import { selectCartItemsCount } from '../redux/Cart';
 
 const IconContainer = styled.div`
   display: flex;

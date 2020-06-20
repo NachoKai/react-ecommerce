@@ -7,10 +7,10 @@ import { PersistGate } from 'redux-persist/integration/react';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import { store, persistor } from './redux/store';
+import { Store, persistor } from './redux/Store';
 
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider store={Store}>
     <BrowserRouter basename='/react-ecommerce'>
       <PersistGate persistor={persistor}>
         <App />

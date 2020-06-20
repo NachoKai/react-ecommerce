@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import SignIn from '../../components/SignIn/SignIn';
-import SignUp from '../../components/SingUp/SignUp';
+import SignIn from '../components/SignIn';
+import SignUp from '../components/SignUp';
 
 const SignInSignOutContainer = styled.div`
   display: flex;
