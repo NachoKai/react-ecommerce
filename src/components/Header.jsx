@@ -12,16 +12,23 @@ import { selectCartHidden } from '../redux/Cart';
 import { selectCurrentUser } from '../redux/User';
 
 const Container = styled.div`
-  height: 70px;
+  background: #230444;
+  position: sticky;
+  height: 60px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
+  top: 0;
+  z-index: 10;
 
   .logo-container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
     height: 100%;
-    width: 70px;
-    padding: 25px;
+    width: 60px;
+    padding: 10px;
   }
 
   .logo {
