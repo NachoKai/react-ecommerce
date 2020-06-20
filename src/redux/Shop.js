@@ -7,16 +7,27 @@ import { createSelector } from 'reselect';
 const selectShop = state => state.shop;
 
 export const selectCollections = createSelector(
-  [selectShop],
+  selectShop,
   shop => shop.collections
 );
+
+export const selectCollectionsForPreview = createSelector(
+  selectCollections,
+  collections => Object.keys(collections).map(key => collections[key])
+);
+
+export const selectCollection = collectionUrl =>
+  createSelector(
+    [selectCollections],
+    collections => collections[collectionUrl]
+  );
 
 // REDUCER== ================================
 // ==========================================
 // ==========================================
 
-const SHOP_DATA = [
-  {
+const SHOP_DATA = {
+  swords: {
     id: 1,
     title: 'Swords',
     routeName: 'swords',
@@ -77,7 +88,7 @@ const SHOP_DATA = [
       },
     ],
   },
-  {
+  bows: {
     id: 2,
     title: 'Bows',
     routeName: 'bows',
@@ -132,7 +143,7 @@ const SHOP_DATA = [
       },
     ],
   },
-  {
+  staffs: {
     id: 3,
     title: 'Staffs',
     routeName: 'staffs',
@@ -169,7 +180,7 @@ const SHOP_DATA = [
       },
     ],
   },
-  {
+  armors: {
     id: 4,
     title: 'Armors',
     routeName: 'armors',
@@ -218,7 +229,7 @@ const SHOP_DATA = [
       },
     ],
   },
-  {
+  shields: {
     id: 5,
     title: 'Shields',
     routeName: 'shields',
@@ -261,7 +272,7 @@ const SHOP_DATA = [
       },
     ],
   },
-];
+};
 
 const INITIAL_STATE = {
   collections: SHOP_DATA,

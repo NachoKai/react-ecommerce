@@ -73,13 +73,10 @@ export default cartReducer;
 
 const selectCart = state => state.cart;
 
-export const selectCartHidden = createSelector(
-  [selectCart],
-  cart => cart.hidden
-);
+export const selectCartHidden = createSelector(selectCart, cart => cart.hidden);
 
 export const selectCartItems = createSelector(
-  [selectCart],
+  selectCart,
   cart => cart.cartItems
 );
 

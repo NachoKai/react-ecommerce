@@ -33,7 +33,7 @@ const SignIn = () => {
       setEmail('');
       setPassword('');
     } catch (error) {
-      console.log(error);
+      console.error(error);
     }
   };
 

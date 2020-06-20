@@ -5,82 +5,83 @@ import { connect } from 'react-redux';
 import CustomButton from './CustomButton';
 import { addItem } from '../redux/Cart';
 
-const CollectionItem = ({ item, addItem }) => {
-  const CollectionItemContainer = styled.div`
-    width: 22%;
-    display: flex;
-    flex-direction: column;
-    height: 350px;
-    align-items: center;
-    position: relative;
+const Container = styled.div`
+  width: 22vw;
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  align-items: center;
+  position: relative;
+  margin-bottom: 30px;
+
+  &:hover {
+    .inverted {
+      display: flex;
+    }
+  }
+
+  .inverted {
+    background-color: white;
+    color: black;
+    width: 80%;
+    height: 50px;
+    opacity: 0.7;
+    line-height: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 255px;
+    border: 2px solid black;
+    display: none;
 
     &:hover {
-      .inverted {
-        display: flex;
-      }
+      opacity: 0.9;
+      background-color: black;
+      color: white;
+      border: 2px solid white;
     }
+  }
+`;
 
-    .inverted {
-      background-color: white;
-      color: black;
-      width: 80%;
-      height: 50px;
-      opacity: 0.7;
-      line-height: 30px;
-      font-weight: bold;
-      position: absolute;
-      top: 255px;
-      border: 2px solid black;
-      display: none;
+const Image = styled.div`
+  width: 100%;
+  height: 95%;
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 5px;
+  background: ${({ imageUrl }) => `url(${imageUrl}) center`};
+`;
 
-      &:hover {
-        opacity: 0.9;
-        background-color: black;
-        color: white;
-        border: 2px solid white;
-      }
-    }
-  `;
+const Footer = styled.div`
+  width: 100%;
+  height: 5%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
 
-  const CollectionItemImage = styled.div`
-    width: 100%;
-    height: 95%;
-    background-size: cover;
-    background-position: center;
-    margin-bottom: 5px;
-    background: ${({ imageUrl }) => `url(${imageUrl}) center`};
-  `;
+  .name {
+    width: 90%;
+    margin-bottom: 15px;
+  }
 
-  const CollectionFooter = styled.div`
-    width: 100%;
-    height: 5%;
-    display: flex;
-    justify-content: space-between;
-    font-size: 18px;
+  .price {
+    width: 10%;
+  }
+`;
 
-    .name {
-      width: 90%;
-      margin-bottom: 15px;
-    }
-
-    .price {
-      width: 10%;
-    }
-  `;
-
+const CollectionItem = ({ item, addItem }) => {
   const { name, price, imageUrl } = item;
 
   return (
-    <CollectionItemContainer className='collection-item'>
-      <CollectionItemImage imageUrl={imageUrl} />
-      <CollectionFooter>
+    <Container>
+      <Image imageUrl={imageUrl} />
+      <Footer>
         <span className='name'>{name}</span>
         <span className='price'>{price}</span>
-      </CollectionFooter>
+      </Footer>
       <CustomButton onClick={() => addItem(item)} className='inverted'>
         Add to cart
       </CustomButton>
-    </CollectionItemContainer>
+    </Container>
   );
 };
 
